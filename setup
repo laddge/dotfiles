@@ -4,7 +4,7 @@
 
 echo 'Setup started !'
 echo 'Installing dotfiles ...'
-filelist=`cat ~/dotfiles/file.list | sed '/^#/d'`
+filelist=`cat ~/dotfiles/filelist.txt | sed '/^#/d'`
 numfiles=`echo "$filelist" | wc -l`
 for i in `seq $numfiles`;  do
   symbolic=~/`echo "$filelist" | sed -n "$i"p | awk '{print $2}'`
