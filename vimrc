@@ -235,7 +235,7 @@ vmap t <Plug>(VTranslate)
 let g:black_virtualenv = '~/.cache/black_venv'
 
 " SKK settings
-let skk_large_jisyo = '~/.vim/SKK-JISYO.L'
+let skk_large_jisyo = '~/.vim/SKK-JISYO.L.txt'
 let skk_auto_save_jisyo = 1
 
 " save undo
