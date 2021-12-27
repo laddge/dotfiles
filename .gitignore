@@ -1,0 +1,7 @@
+.DS_Store
+HOME/.vim/bundle/*
+HOME/.vim/colors/*
+HOME/.vim/dein/*
+**/**.swp
+**/**.swo
+vim/undo/*
