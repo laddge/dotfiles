@@ -1,0 +1,8 @@
+#symbolic dereference
+alacritty .config/alacritty
+tmux.conf .tmux.conf
+vim .vim
+zsh .zsh
+vimrc .vimrc
+zshrc .zshrc
+pycodestyle .config/pycodestyle

@@ -1,0 +1,30 @@
+#!/bin/sh
+# created by tomokiz
+# write filelist to ~/dotfiles/file.list
+
+echo 'Setup started !'
+echo 'Installing dotfiles ...'
+filelist=`cat ~/dotfiles/file.list | sed '/^#/d'`
+numfiles=`echo "$filelist" | wc -l`
+for i in `seq $numfiles`;  do
+  symbolic=~/`echo "$filelist" | sed -n "$i"p | awk '{print $2}'`
+  name=~/dotfiles/`echo "$filelist" | sed -n "$i"p | awk '{print $1}'`
+  echo -n "$name -- "
+  if [ -e "$symbolic" ];  then
+    if [ `file $symbolic | grep symbolic | wc -l` -eq 1 ]; then
+      printf '\033[32;1m%s\033[m\n' "Installed"
+    else
+      printf '\033[31;1m%s\033[m\n' "Exist!"
+    fi
+  else
+    ln -sf $name $symbolic
+    printf '\033[32;1m%s\033[m\n' "Installed"
+  fi
+done
+echo 'Installing submodule ...'
+cd ~/dotfiles
+git submodule update --init
+cd -
+echo 'Installing vim plugins ...'
+vim +PluginInstall +qall
+echo 'Setup finished!'

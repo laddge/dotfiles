@@ -1,0 +1,30 @@
+#!/bin/bash
+Exec=`nslookup github.com | grep 'timed out' | wc -l`
+if [ ${Exec} -ne 0 ]; then
+    echo "${Exec}[Error] No Internet Connection!"
+    exit
+fi
+echo "[Info] Pulling"
+cd ~/src/vim
+git pull origin master
+echo "[Info] Configuring"
+cd ~/src/vim/src
+make distclean
+confop="--enable-multibyte "
+confop="${confop}--enable-luainterp "
+confop="${confop}--enable-perlinterp "
+confop="${confop}--enable-pythoninterp "
+confop="${confop}--enable-python3interp "
+confop="${confop}--enable-rubyinterp "
+confop="${confop}--enable-luainterp "
+confop="${confop}--disable-gui"
+if [ $(uname -o) == 'Android' ]; then
+    confop="${confop} --prefix $PREFIX"
+fi
+./configure ${confop}
+echo "[Info] Making"
+make -j2
+echo "[Info] Installing"
+sudo make install
+echo "[Info] Finished!"
+
