@@ -183,7 +183,7 @@ function! SetStatusLine()
     let c = 4
     let mode_name = 'V'
   endif
-  return '%' . c . '* ' . mode_name . ' %* %<%F%=%m%r %18([%{toupper(&ft)}][%l/%L][%{b:charCount}]%)'
+  return '%' . c . '* ' . mode_name . ' %* %<%F%=%m%r %18([%{toupper(&ft)}][%l/%L]%)'
 endfunction
 
 " hilights
