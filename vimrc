@@ -21,9 +21,6 @@ endfor
 call vundle#end()
 filetype plugin indent on
 
-" Ctrl-@でペーストモード
-set pastetoggle=<C-@>
-
 set encoding=utf-8
 scriptencoding utf-8
 
@@ -95,11 +92,6 @@ set mouse=a
 " jk
 nnoremap j gj
 nnoremap k gk
-
-" colorscheme
-set background=dark
-color hybrid
-set termguicolors
 
 "leader key
 let mapleader = "\<Space>"
@@ -225,12 +217,6 @@ let g:lsp_diagnostics_signs_warning = {'text': 'W>'}
 let g:lsp_diagnostics_signs_hint = {'text': 'I>'}
 noremap <silent><Leader>f :call Fix()<CR>
 
-" Translate settings
-let g:translate_source = "en"
-let g:translate_target = "ja"
-nmap gr <Plug>(Translate)
-vmap t <Plug>(VTranslate)
-
 " black settings
 let g:black_virtualenv = '~/.cache/black_venv'
 
@@ -243,6 +229,11 @@ if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
 endif
+
+" colorscheme
+set background=dark
+color hybrid
+set termguicolors
 
 " local settings
 if glob("~/.vimrc.local") != ''
