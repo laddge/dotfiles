@@ -93,6 +93,11 @@ set mouse=a
 nnoremap j gj
 nnoremap k gk
 
+" colorscheme
+set background=dark
+color hybrid
+set termguicolors
+
 "leader key
 let mapleader = "\<Space>"
 
@@ -229,11 +234,6 @@ if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
 endif
-
-" colorscheme
-set background=dark
-color hybrid
-set termguicolors
 
 " local settings
 if glob("~/.vimrc.local") != ''

@@ -14,13 +14,12 @@ prabirshrestha/asyncomplete.vim
 prabirshrestha/asyncomplete-lsp.vim
 hrsh7th/vim-vsnip
 hrsh7th/vim-vsnip-integ
-jacoborus/tender.vim
 tpope/vim-surround
 tpope/vim-fugitive
 airblade/vim-gitgutter
 laddge/InsEmoji.vim
 psf/black
-cocopon/iceberg.vim
 tyru/skk.vim
 tpope/vim-repeat
 mattn/emmet-vim
+rafi/awesome-vim-colorschemes
