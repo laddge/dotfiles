@@ -18,7 +18,6 @@ jacoborus/tender.vim
 tpope/vim-surround
 tpope/vim-fugitive
 airblade/vim-gitgutter
-skanehira/translate.vim
 laddge/InsEmoji.vim
 psf/black
 cocopon/iceberg.vim
