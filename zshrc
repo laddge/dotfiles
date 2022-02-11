@@ -95,7 +95,7 @@ function prompt_git {
   branch_status="%F{blue}"
   fi
   # ブランチ名を色付きで表示する
-  echo " [${branch_status}$branch_name%f]"
+  echo " (${branch_status}$branch_name%f)"
 }
 
 # function delete_rprompt() {
@@ -124,15 +124,15 @@ prompt_kao() {
     local ok='(^_^)'
     local ng='(=_=;'
     local color face reset
-    color="%{%(?.%B%F{green}.%B%F{red})%}"
-    face="%(?.$ok.$ng)%(!.!.)"
-    reset="%{%f%b%}"
+    color="%{%(?.%F{green}.%B%F{red})%}"
+    face="%(?.$ok.$ng)"
+    reset="%{%f%}"
     echo "$color$face$reset"
 }
 
 # プロンプトにメソッドの結果を表示させる
 PROMPT='%B[`exec prompt_pwd`]`prompt_git`
-`prompt_kao` %F{white}%(!.#.$) %f%b'
+`prompt_kao` %(!.%F{red}#%f.%b%F{white}$%f%B) %f%b'
 RPROMPT=""
 
 autoload history-search-end
