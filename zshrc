@@ -150,6 +150,20 @@ bindkey "[B" history-beginning-search-forward-end
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[default]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow,bold'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=blue,bold'
+ZSH_HIGHLIGHT_STYLES[path]='fg=white,underline,bold'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow,bold'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow,bold'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=yellow,bold'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow, bold'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=green,bold'
 zstyle ':completion:*:default' menu select=2
 
 function ranger() {
