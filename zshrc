@@ -6,6 +6,7 @@ setopt no_tify # バックグラウンドジョブが終了したらすぐに知
 setopt auto_cd # ディレクトリ名を入力するだけでcdできるようにする
 setopt share_history # 同時に起動したzshの間でヒストリを共有する。
 setopt hist_ignore_dups # 直前と同じコマンドをヒストリに残さない。
+setopt hist_reduce_blanks # ヒストリに保存するときに余分なスペースを削除する
 }
 #ディレクトリを作って移動
 #mkdircd()
