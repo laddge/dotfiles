@@ -27,4 +27,9 @@ git submodule update --init
 cd -
 echo 'Installing vim plugins ...'
 vim +PluginInstall +qall
+if [ ! -e ~/.fzf ]; then
+    echo 'Installing fzf ...'
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --all
+fi
 echo 'Setup finished!'

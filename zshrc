@@ -229,6 +229,9 @@ eval "$(rbenv init -)"
 # for tty
 (tty|fgrep -q 'tty') && export LANG=C
 
+# for fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
