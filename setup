@@ -6,6 +6,7 @@ echo 'Setup started !'
 echo 'Installing dotfiles ...'
 filelist=`cat ~/dotfiles/filelist.txt | sed '/^#/d'`
 numfiles=`echo "$filelist" | wc -l`
+mkdir -p ~/.config
 for i in `seq $numfiles`;  do
   symbolic=~/`echo "$filelist" | sed -n "$i"p | awk '{print $2}'`
   name=~/dotfiles/`echo "$filelist" | sed -n "$i"p | awk '{print $1}'`
