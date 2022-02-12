@@ -175,6 +175,14 @@ if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
 fi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 
+#=============================
+# source zsh-autosuggestions
+#=============================
+if [ -e ~/.zsh/zsh-completions/src ]; then
+    fpath=(~/.zsh/zsh-completions/src $fpath)
+    autoload -Uz compinit && compinit -u # 補完機能の強化
+fi
+
 function ranger() {
 if [ -z "$RANGER_LEVEL" ]; then
 /usr/local/bin/ranger $@
@@ -183,9 +191,6 @@ exit
 fi
 }
 # zsh-completionsを利用する Github => zsh-completions
-fpath=(~/.zsh-completions $fpath)
-autoload -Uz compinit && compinit -u # 補完機能の強化
-# fi
 
 # for w3m
 export WWW_HOME="http://google.com/"
