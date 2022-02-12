@@ -11,3 +11,6 @@
 [submodule "zsh/zsh-completions"]
 	path = zsh/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
+[submodule "zsh/zsh-smart-history-search"]
+	path = zsh/zsh-smart-history-search
+	url = https://github.com/laddge/zsh-smart-history-search

@@ -136,15 +136,11 @@ PROMPT='%B[`exec prompt_pwd`]`prompt_git`
 `prompt_kao` %(!.%F{red}#%f.%b%F{white}$%f%B) %f%b'
 RPROMPT=""
 
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-bindkey "OA" history-beginning-search-backward-end
-bindkey "OB" history-beginning-search-forward-end
-bindkey "[A" history-beginning-search-backward-end
-bindkey "[B" history-beginning-search-forward-end
+if [ -f ~/.zsh/zsh-smart-history-search/zsh-smart-history-search.zsh ]; then
+    source ~/.zsh/zsh-smart-history-search/zsh-smart-history-search.zsh
+    bindkey "[A" zsh-smarths-backward
+    bindkey "[B" zsh-smarths-forward
+fi
 
 #=============================
 # source zsh-syntax-highlighting
