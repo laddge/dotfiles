@@ -56,6 +56,7 @@ do_enter() {
 }
 zle -N do_enter
 bindkey '^m' do_enter
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS=(do_enter $ZSH_AUTOSUGGEST_CLEAR_WIDGETS)
 
 # At cd
 chpwd() {
