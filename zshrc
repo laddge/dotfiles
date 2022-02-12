@@ -138,6 +138,10 @@ RPROMPT=""
 
 if [ -f ~/.zsh/zsh-smart-history-search/zsh-smart-history-search.zsh ]; then
     source ~/.zsh/zsh-smart-history-search/zsh-smart-history-search.zsh
+    bindkey "" zsh-smarths-backward
+    bindkey "" zsh-smarths-forward
+    bindkey "OA" zsh-smarths-backward
+    bindkey "OB" zsh-smarths-forward
     bindkey "[A" zsh-smarths-backward
     bindkey "[B" zsh-smarths-forward
 fi
