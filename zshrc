@@ -167,6 +167,14 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow, bold'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=green,bold'
 zstyle ':completion:*:default' menu select=2
 
+#=============================
+# source zsh-autosuggestions
+#=============================
+if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
+
 function ranger() {
 if [ -z "$RANGER_LEVEL" ]; then
 /usr/local/bin/ranger $@
