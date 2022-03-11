@@ -136,15 +136,15 @@ PROMPT='%B[`exec prompt_pwd`]`prompt_git`
 `prompt_kao` %(!.%F{red}#%f.%b%F{white}$%f%B) %f%b'
 RPROMPT=""
 
-if [ -f ~/.zsh/zsh-smart-history-search/zsh-smart-history-search.zsh ]; then
-    source ~/.zsh/zsh-smart-history-search/zsh-smart-history-search.zsh
-    bindkey "" zsh-smarths-backward
-    bindkey "" zsh-smarths-forward
-    bindkey "OA" zsh-smarths-backward
-    bindkey "OB" zsh-smarths-forward
-    bindkey "[A" zsh-smarths-backward
-    bindkey "[B" zsh-smarths-forward
-fi
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+bindkey "OA" history-beginning-search-backward-end
+bindkey "OB" history-beginning-search-forward-end
+bindkey "[A" history-beginning-search-backward-end
+bindkey "[B" history-beginning-search-forward-end
 
 #=============================
 # source zsh-syntax-highlighting
@@ -168,17 +168,9 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow, bold'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=green,bold'
 zstyle ':completion:*:default' menu select=2
 
-#=============================
-# source zsh-autosuggestions
-#=============================
-if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
-
-#=============================
-# source zsh-autosuggestions
-#=============================
+#=========================
+# source zsh-completions
+#=========================
 if [ -e ~/.zsh/zsh-completions/src ]; then
     fpath=(~/.zsh/zsh-completions/src $fpath)
     autoload -Uz compinit && compinit -u # 補完機能の強化
@@ -191,7 +183,6 @@ else
 exit
 fi
 }
-# zsh-completionsを利用する Github => zsh-completions
 
 # for w3m
 export WWW_HOME="http://google.com/"
