@@ -66,7 +66,7 @@ set mouse=a
 
 " colorscheme
 set background=dark
-color hybrid
+color PaperColor
 set termguicolors
 
 " leader key

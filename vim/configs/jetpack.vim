@@ -18,5 +18,6 @@ Jetpack 'airblade/vim-gitgutter'
 Jetpack 'psf/black'
 Jetpack 'tyru/skk.vim'
 Jetpack 'tpope/vim-repeat'
+Jetpack 'NLKNguyen/papercolor-theme'
 
 call jetpack#end()
