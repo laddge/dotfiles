@@ -1,5 +1,5 @@
 #!/bin/sh
-# created by tomokiz
+# created by laddge
 # write filelist to ~/dotfiles/file.list
 
 echo 'Setup started !'
