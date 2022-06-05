@@ -19,5 +19,6 @@ Jetpack 'psf/black'
 Jetpack 'tyru/skk.vim'
 Jetpack 'tpope/vim-repeat'
 Jetpack 'NLKNguyen/papercolor-theme'
+Jetpack 'markonm/traces.vim'
 
 call jetpack#end()
