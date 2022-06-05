@@ -87,6 +87,12 @@ endif
 
 " jetpack
 runtime! configs/jetpack.vim
+for name in jetpack#names()
+  if !jetpack#tap(name)
+    call jetpack#sync()
+    break
+  endif
+endfor
 runtime! configs/plugins/*.vim
 
 " local settings
