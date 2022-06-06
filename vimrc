@@ -64,11 +64,6 @@ set shortmess-=S
 " enable mouse
 set mouse=a
 
-" colorscheme
-set background=dark
-color PaperColor
-set termguicolors
-
 " leader key
 let mapleader = "\<Space>"
 
@@ -94,6 +89,11 @@ for name in jetpack#names()
   endif
 endfor
 runtime! configs/plugins/*.vim
+
+" colorscheme
+set background=dark
+set termguicolors
+color hathq
 
 " local settings
 if glob("~/.vimrc.local") != ''
