@@ -20,5 +20,6 @@ Jetpack 'tyru/skk.vim'
 Jetpack 'tpope/vim-repeat'
 Jetpack 'markonm/traces.vim'
 Jetpack 'laddge/vim-hathq'
+Jetpack 'morhetz/gruvbox'
 
 call jetpack#end()
