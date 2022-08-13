@@ -1,7 +1,8 @@
 call jetpack#begin('~/.cache/vim-jetpack')
 
 Jetpack 'itchyny/lightline.vim'
-Jetpack 'scrooloose/nerdtree'
+Jetpack 'lambdalisue/fern.vim'
+Jetpack 'lambdalisue/fern-hijack.vim'
 Jetpack 'Yggdroot/indentLine'
 Jetpack 'vim/killersheep'
 Jetpack 'luochen1990/rainbow'
