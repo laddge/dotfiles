@@ -93,7 +93,7 @@ runtime! configs/plugins/*.vim
 " colorscheme
 set background=dark
 set termguicolors
-color gruvbox
+" color gruvbox
 
 " local settings
 if glob("~/.vimrc.local") != ''
