@@ -21,8 +21,17 @@ Jetpack 'morhetz/gruvbox', {'opt': 1}
 
 call jetpack#end()
 
-function! s:load_plug()
+function! s:vimenter()
     packadd lightline.vim
+    packadd vim-hathq
+    packadd gruvbox
+
+    color gruvbox
+    call lightline#enable()
+    call timer_start(50, function('s:lazyload'))
+endfunction
+
+function! s:lazyload(t)
     packadd rainbow
     packadd tcomment_vim
     packadd vim-trailing-whitespace
@@ -33,12 +42,8 @@ function! s:load_plug()
     packadd asyncomplete-lsp.vim
     packadd vim-gitgutter
     packadd skk.vim
-    packadd vim-hathq
-    packadd gruvbox
 
-    color gruvbox
-    call lightline#enable()
     call lsp#enable()
 endfunction
 
-autocmd VimEnter * call s:load_plug()
+autocmd VimEnter * call s:vimenter()

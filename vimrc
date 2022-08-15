@@ -64,6 +64,9 @@ set shortmess-=S
 " enable mouse
 set mouse=a
 
+" hide intro
+set shortmess+=I
+
 " leader key
 let mapleader = "\<Space>"
 

@@ -15,7 +15,11 @@ let g:lightline = {
     \ }
 
 function! SkkStatus()
-    let modestr = SkkGetModeStr()
+    try
+        let modestr = SkkGetModeStr()
+    catch
+        let modestr = ''
+    endtry
     if modestr != ' '
         return modestr
     else
