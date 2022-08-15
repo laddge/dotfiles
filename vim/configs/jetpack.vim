@@ -15,7 +15,7 @@ Jetpack 'prabirshrestha/asyncomplete.vim', {'opt': 1}
 Jetpack 'prabirshrestha/asyncomplete-lsp.vim', {'opt': 1}
 Jetpack 'airblade/vim-gitgutter', {'opt': 1}
 Jetpack 'psf/black', {'for': 'python', 'opt': 1}
-Jetpack 'tyru/skk.vim', {'opt': 1}
+Jetpack 'laddge/skk.vim', {'opt': 1}
 Jetpack 'laddge/vim-hathq', {'opt': 1}
 Jetpack 'morhetz/gruvbox', {'opt': 1}
 
