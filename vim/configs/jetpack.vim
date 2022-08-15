@@ -13,12 +13,9 @@ Jetpack 'prabirshrestha/vim-lsp', {'opt': 1}
 Jetpack 'mattn/vim-lsp-settings', {'opt': 1}
 Jetpack 'prabirshrestha/asyncomplete.vim', {'opt': 1}
 Jetpack 'prabirshrestha/asyncomplete-lsp.vim', {'opt': 1}
-Jetpack 'tpope/vim-surround', {'opt': 1}
 Jetpack 'airblade/vim-gitgutter', {'opt': 1}
 Jetpack 'psf/black', {'for': 'python', 'opt': 1}
 Jetpack 'tyru/skk.vim', {'opt': 1}
-Jetpack 'tpope/vim-repeat', {'opt': 1}
-Jetpack 'markonm/traces.vim', {'opt': 1}
 Jetpack 'laddge/vim-hathq', {'opt': 1}
 Jetpack 'morhetz/gruvbox', {'opt': 1}
 
@@ -34,12 +31,8 @@ function! s:load_plug()
     packadd vim-lsp-settings
     packadd asyncomplete.vim
     packadd asyncomplete-lsp.vim
-    packadd vim-surround
     packadd vim-gitgutter
-    packadd black
     packadd skk.vim
-    packadd vim-repeat
-    packadd traces.vim
     packadd vim-hathq
     packadd gruvbox
 
