@@ -1,3 +1,5 @@
+filetype off
+
 call jetpack#begin('~/.cache/vim-jetpack')
 
 Jetpack 'itchyny/lightline.vim'
@@ -18,7 +20,9 @@ Jetpack 'psf/black', {'for': 'python'}
 Jetpack 'laddge/skk.vim'
 Jetpack 'laddge/vim-hathq'
 Jetpack 'morhetz/gruvbox'
+Jetpack 'wuelnerdotexe/vim-astro'
 
 call jetpack#end()
 
+filetype plugin on
 color gruvbox
