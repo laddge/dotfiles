@@ -2,6 +2,7 @@
 alacritty .config/alacritty
 tmux.conf .tmux.conf
 vim .vim
+nvim .config/nvim
 zsh .zsh
 vimrc .vimrc
 zshrc .zshrc

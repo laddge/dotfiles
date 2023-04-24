@@ -198,6 +198,7 @@ alias ll='ls -alF'
 alias cmx='chmod +x'
 alias python='python3'
 alias pip='pip3'
+alias v='nvim'
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
