@@ -234,7 +234,7 @@ export PATH="$PATH:/sbin:/usr/sbin:/snap/bin:$HOME/bin:$HOME/.rbenv/bin:$HOME/.l
 eval "$(rbenv init -)"
 
 # for tty
-(tty|fgrep -q 'tty') && export LANG=C
+(tty|grep -Fq 'tty') && export LANG=C
 
 # for fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
