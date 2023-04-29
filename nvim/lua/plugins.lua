@@ -15,6 +15,7 @@ require('jetpack.packer').startup(function(use)
       vim.g.astro_typescript = 'enable'
     end,
   }
+  use 'evanleck/vim-svelte'
   use { 'nvim-lualine/lualine.nvim',
     config = function()
       vim.fn.setcellwidths({
