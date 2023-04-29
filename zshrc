@@ -199,6 +199,16 @@ alias cmx='chmod +x'
 alias python='python3'
 alias pip='pip3'
 alias v='nvim'
+alias ga='git add'
+alias gaa='git add -A'
+alias gs='git status'
+alias gl='git log --graph'
+alias gch='git checkout'
+alias gb='git branch'
+alias gpl='git pull'
+alias gps='git push'
+alias gpr='git push -u origin'
+alias gcm='git commit -m'
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
