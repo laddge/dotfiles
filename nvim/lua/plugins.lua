@@ -10,6 +10,14 @@ require('jetpack.packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'ray-x/cmp-treesitter'
+  use { 'vim-skk/skkeleton',
+    requires = { 'vim-denops/denops.vim' },
+    config = function()
+      vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>(skkeleton-toggle)', { silent = true })
+      vim.api.nvim_set_keymap('c', '<C-j>', '<Plug>(skkeleton-toggle)', { silent = true })
+      vim.cmd('call skkeleton#config({ \'globalJisyo\': \'~/.config/nvim/SKK-JISYO.L.txt\' })')
+    end,
+  }
   use { 'wuelnerdotexe/vim-astro',
     config = function()
       vim.g.astro_typescript = 'enable'
@@ -21,12 +29,27 @@ require('jetpack.packer').startup(function(use)
       vim.fn.setcellwidths({
         { 0xe0b0, 0xe0b3, 1 },
       })
+      local function skkmode()
+        local mode = vim.g['skkeleton#mode']
+        if mode == 'hira' then
+          return 'あ'
+        elseif mode == 'kata' then
+          return 'ア'
+        elseif mode == 'hankata' then
+          return 'ｱ'
+        elseif mode == 'zenkaku' then
+          return 'ａ'
+        else
+          return mode
+        end
+      end
       require('lualine').setup({
         options = {
           icons_enabled = false,
         },
         sections = {
           lualine_a = {{ 'mode', fmt = function(str) return str:sub(1,3) end }},
+          lualine_c = { 'filename', skkmode },
         },
       })
     end,
