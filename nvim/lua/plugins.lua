@@ -10,12 +10,11 @@ require('jetpack.packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'ray-x/cmp-treesitter'
-  use { 'vim-skk/skkeleton',
-    requires = { 'vim-denops/denops.vim' },
+  use { 'vim-skk/eskk.vim',
     config = function()
-      vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>(skkeleton-toggle)', { silent = true })
-      vim.api.nvim_set_keymap('c', '<C-j>', '<Plug>(skkeleton-toggle)', { silent = true })
-      vim.cmd('call skkeleton#config({ \'globalJisyo\': \'~/.config/nvim/SKK-JISYO.L.txt\' })')
+      vim.g['eskk#directory'] = '~/.eskk'
+      vim.g['eskk#dictionary'] = { path = '~/.eskk_jisyo', sorted = 1, encoding = 'utf-8' }
+      vim.g['eskk#large_dictionary'] = { path = '~/.config/nvim/SKK-JISYO.L.txt', sorted = 1, encoding = 'euc-jp' }
     end,
   }
   use { 'wuelnerdotexe/vim-astro',
@@ -30,17 +29,10 @@ require('jetpack.packer').startup(function(use)
         { 0xe0b0, 0xe0b3, 1 },
       })
       local function skkmode()
-        local mode = vim.g['skkeleton#mode']
-        if mode == 'hira' then
-          return 'あ'
-        elseif mode == 'kata' then
-          return 'ア'
-        elseif mode == 'hankata' then
-          return 'ｱ'
-        elseif mode == 'zenkaku' then
-          return 'ａ'
+        if vim.call('eskk#is_enabled') == 1 then
+          return vim.g['eskk#statusline_mode_strings'][vim.call('eskk#get_mode')]
         else
-          return mode
+          return ''
         end
       end
       require('lualine').setup({
