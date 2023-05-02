@@ -35,13 +35,22 @@ require('jetpack.packer').startup(function(use)
           return ''
         end
       end
+      vim.api.nvim_create_autocmd('user', {
+        pattern = 'eskk-initialize-post',
+        callback = function()
+          require('lualine').setup({
+            sections = {
+              lualine_c = { 'filename', skkmode },
+            },
+          })
+        end
+      })
       require('lualine').setup({
         options = {
           icons_enabled = false,
         },
         sections = {
           lualine_a = {{ 'mode', fmt = function(str) return str:sub(1,3) end }},
-          lualine_c = { 'filename', skkmode },
         },
       })
     end,
