@@ -53,4 +53,7 @@ vim.api.nvim_set_keymap('n', '<Leader>t', ':tabe<CR>', { noremap = true, silent 
 -- undo
 vim.opt.undofile = true
 
+-- hide shortmess
+vim.opt.shortmess = vim.o.shortmess .. 'I'
+
 require('plugins')
