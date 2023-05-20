@@ -13,6 +13,7 @@ require('jetpack.packer').startup(function(use)
       require('mason-lspconfig').setup_handlers({ function(server)
         require('lspconfig')[server].setup({})
       end })
+      vim.cmd(':LspStart')
     end,
   }
   use {
