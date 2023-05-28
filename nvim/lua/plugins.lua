@@ -23,6 +23,7 @@ require('jetpack.packer').startup(function(use)
       { 'hrsh7th/cmp-nvim-lsp', event = { 'InsertEnter' } },
       { 'hrsh7th/cmp-buffer', event = { 'InsertEnter' } },
       { 'hrsh7th/cmp-path', event = { 'InsertEnter' } },
+      { 'hrsh7th/vim-vsnip', event = { 'InsertEnter' } },
     },
     config = function()
       local cmp = require('cmp')
