@@ -146,14 +146,17 @@ require('jetpack.packer').startup(function(use)
       })
     end,
   }
-  use { 'catppuccin/nvim',
+  use { 'folke/tokyonight.nvim',
     event = { 'VimEnter' },
-    as = 'catppuccin',
     config = function()
-      require('catppuccin').setup({
-        no_italic = true,
+      require('tokyonight').setup({
+        styles = {
+          comments = { italic = true },
+          keywords = { italic = true },
+        },
+        lualine_bold = true,
       })
-      vim.cmd('colorscheme catppuccin-mocha')
+      vim.cmd('colorscheme tokyonight-moon')
     end,
   }
 end)
