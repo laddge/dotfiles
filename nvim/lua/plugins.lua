@@ -146,17 +146,10 @@ require('jetpack.packer').startup(function(use)
       })
     end,
   }
-  use { 'folke/tokyonight.nvim',
+  use { 'EdenEast/nightfox.nvim',
     event = { 'VimEnter' },
     config = function()
-      require('tokyonight').setup({
-        styles = {
-          comments = { italic = true },
-          keywords = { italic = true },
-        },
-        lualine_bold = true,
-      })
-      vim.cmd('colorscheme tokyonight-moon')
+      vim.cmd('colorscheme nightfox')
     end,
   }
 end)
