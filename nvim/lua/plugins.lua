@@ -81,9 +81,6 @@ require('jetpack.packer').startup(function(use)
   use { 'nvim-lualine/lualine.nvim',
     event = { 'VimEnter' },
     config = function()
-      local cellwidths = vim.fn.getcellwidths()
-      table.insert(cellwidths, { 0xe0b0, 0xe0b3, 1 })
-      vim.fn.setcellwidths(cellwidths)
       local function skkmode()
         if vim.call('eskk#is_enabled') == 1 then
           return vim.g['eskk#statusline_mode_strings'][vim.call('eskk#get_mode')]
@@ -102,9 +99,6 @@ require('jetpack.packer').startup(function(use)
         end
       })
       require('lualine').setup({
-        options = {
-          icons_enabled = false,
-        },
         sections = {
           lualine_a = {{ 'mode', fmt = function(str) return str:sub(1,3) end }},
         },
@@ -188,9 +182,6 @@ require('jetpack.packer').startup(function(use)
     event = { 'VimEnter' },
     config = function()
       vim.opt.signcolumn = 'yes'
-      local cellwidths = vim.fn.getcellwidths()
-      table.insert(cellwidths, { 0x2500, 0x257f, 1 })
-      vim.fn.setcellwidths(cellwidths)
       require('gitsigns').setup()
     end,
   }
