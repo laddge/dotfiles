@@ -192,12 +192,12 @@ require('jetpack.packer').startup(function(use)
     end,
   }
   use { 'lukas-reineke/indent-blankline.nvim',
+    as = 'ibl',
     event = { 'VimEnter' },
     config = function()
-      require('indent_blankline').setup({
-        space_char_blankline = ' ',
+      require('ibl').setup({
+        indent = { char = '|' },
       })
-      vim.g.indent_blankline_char = '|'
     end,
   }
   use { 'lukoshkin/trailing-whitespace', event = { 'VimEnter' } }
