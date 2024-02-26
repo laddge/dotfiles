@@ -1,0 +1,5 @@
+[user]
+	email = dev.laddge@gmail.com
+	name = Laddge
+[commit]
+	template = ~/.commit_template

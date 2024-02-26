@@ -7,3 +7,5 @@ zsh .zsh
 vimrc .vimrc
 zshrc .zshrc
 pycodestyle .config/pycodestyle
+gitconfig .gitconfig
+commit_template .commit_template

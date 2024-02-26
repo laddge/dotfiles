@@ -1,0 +1,11 @@
+# =============== Commit Msg ===============
+
+# ===============  Template  ===============
+# feat: :sparkles: 新しい機能
+# fix: :bug: バグの修正
+# docs: :memo: ドキュメントのみの変更
+# style: :art: 空白、フォーマット、セミコロン追加など
+# refactor: :recycle: 仕様に影響がないコード改善(リファクタ)
+# perf: :zap: パフォーマンス向上関連
+# test: :green_heart: テスト関連
+# chore: :wrench: ビルド、補助ツール、ライブラリ関連

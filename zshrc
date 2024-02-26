@@ -208,7 +208,7 @@ alias gb='git branch'
 alias gpl='git pull'
 alias gps='git push'
 alias gpr='git push -u origin'
-alias gcm='git commit -m'
+alias gcm='git commit'
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
