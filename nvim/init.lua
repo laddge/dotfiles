@@ -58,3 +58,4 @@ vim.opt.shortmess = vim.o.shortmess .. 'I'
 
 require('cellwidths')
 require('plugins')
+require('ekken')
