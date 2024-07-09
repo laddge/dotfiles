@@ -132,7 +132,7 @@ prompt_kao() {
 }
 
 # プロンプトにメソッドの結果を表示させる
-PROMPT='%B[`exec prompt_pwd`]`prompt_git`
+PROMPT='%B[%F{green}%m%f][`exec prompt_pwd`]`prompt_git`
 `prompt_kao` %(!.%F{red}#%f.%b%F{white}$%f%B) %f%b'
 RPROMPT=""
 
