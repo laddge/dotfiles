@@ -24,6 +24,15 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow, bold'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=green,bold'
 zstyle ':completion:*:default' menu select=2
 
+zplug "zsh-users/zsh-history-substring-search"
+export HISTORY_SUBSTRING_SEARCH_PREFIXED=true
+bindkey "^P" history-substring-search-up
+bindkey "^N" history-substring-search-down
+bindkey "OA" history-substring-search-up
+bindkey "OB" history-substring-search-down
+bindkey "[A" history-substring-search-up
+bindkey "[B" history-substring-search-down
+
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
