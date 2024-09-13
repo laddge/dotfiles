@@ -46,10 +46,6 @@ vim.opt.mouse = 'a'
 -- leader key
 vim.g.mapleader = ' '
 
--- tabline
-vim.opt.showtabline = 2
-vim.api.nvim_set_keymap('n', '<Leader>t', ':tabe<CR>', { noremap = true, silent = true })
-
 -- undo
 vim.opt.undofile = true
 

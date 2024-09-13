@@ -152,6 +152,18 @@ require('jetpack.packer').startup(function(use)
       vim.keymap.set('n', '<Leader>e', require('nvim-tree.api').tree.toggle)
     end,
   }
+  use {'akinsho/bufferline.nvim',
+    event = { 'VimEnter' },
+    requires = {
+      { 'nvim-tree/nvim-web-devicons', event = { 'VimEnter' } },
+    },
+    config = function()
+      require('bufferline').setup({
+      })
+      vim.keymap.set('n', '<Leader>h', '<cmd>bp<CR>')
+      vim.keymap.set('n', '<Leader>l', '<cmd>bn<CR>')
+    end,
+  }
   use { 'lewis6991/gitsigns.nvim',
     event = { 'VimEnter' },
     config = function()
