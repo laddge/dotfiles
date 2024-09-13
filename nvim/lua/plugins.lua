@@ -152,7 +152,7 @@ require('jetpack.packer').startup(function(use)
       vim.keymap.set('n', '<Leader>e', require('nvim-tree.api').tree.toggle)
     end,
   }
-  use {'akinsho/bufferline.nvim',
+  use { 'akinsho/bufferline.nvim',
     event = { 'VimEnter' },
     requires = {
       { 'nvim-tree/nvim-web-devicons', event = { 'VimEnter' } },
@@ -162,6 +162,20 @@ require('jetpack.packer').startup(function(use)
       })
       vim.keymap.set('n', '<Leader>h', '<cmd>bp<CR>')
       vim.keymap.set('n', '<Leader>l', '<cmd>bn<CR>')
+    end,
+  }
+  use { 'nvim-telescope/telescope.nvim',
+    event = { 'VimEnter' },
+    requires = {
+      { 'nvim-lua/plenary.nvim', event = { 'VimEnter' } },
+    },
+    config = function()
+      require('telescope').setup()
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     end,
   }
   use { 'lewis6991/gitsigns.nvim',
