@@ -178,6 +178,14 @@ require('jetpack.packer').startup(function(use)
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     end,
   }
+  use { 'akinsho/toggleterm.nvim',
+    event = { 'VimEnter' },
+    config = function()
+      require('toggleterm').setup({
+        open_mapping = [[<c-\>]],
+      })
+    end,
+  }
   use { 'lewis6991/gitsigns.nvim',
     event = { 'VimEnter' },
     config = function()
