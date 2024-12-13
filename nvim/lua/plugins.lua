@@ -230,4 +230,7 @@ require('jetpack.packer').startup(function(use)
       vim.cmd('colorscheme nightfox')
     end,
   }
+  use { 'wakatime/vim-wakatime',
+    event = { 'VimEnter' },
+  }
 end)
