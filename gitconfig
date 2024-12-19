@@ -3,3 +3,5 @@
 	name = Laddge
 [commit]
 	template = ~/.commit_template
+[core]
+	editor = nvim
