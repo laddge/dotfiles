@@ -2,17 +2,15 @@ vim.cmd('packadd vim-jetpack')
 require('jetpack.packer').startup(function(use)
   use { 'tani/vim-jetpack', opt = 1 }
   use {
-    'williamboman/mason.nvim',
+    'mason-org/mason.nvim',
     event = { 'VimEnter' },
     requires = {
       { 'neovim/nvim-lspconfig', event = { 'VimEnter' }, after = 'mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim', event = { 'VimEnter' }, after = 'mason.nvim' },
+      { 'mason-org/mason-lspconfig.nvim', event = { 'VimEnter' }, after = 'mason.nvim' },
     },
     config = function()
       require('mason').setup()
-      require('mason-lspconfig').setup_handlers({ function(server)
-        require('lspconfig')[server].setup({})
-      end })
+      require('mason-lspconfig').setup()
       vim.keymap.set('n', 'K',  vim.lsp.buf.hover)
       vim.keymap.set('n', 'gf', vim.lsp.buf.format)
       vim.keymap.set('n', 'gr', vim.lsp.buf.references)
