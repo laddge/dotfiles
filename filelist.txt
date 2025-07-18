@@ -9,3 +9,4 @@ zshrc .zshrc
 pycodestyle .config/pycodestyle
 gitconfig .gitconfig
 commit_template .commit_template
+zellij .config/zellij

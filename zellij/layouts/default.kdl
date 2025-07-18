@@ -1,0 +1,36 @@
+layout {
+  pane size=1 borderless=true {
+    plugin location="zjstatus" {
+      format_left   "{mode} {tabs}"
+      format_center ""
+      format_right  "{pipe_zjstatus_hints} {session} "
+      format_space  ""
+
+      pipe_zjstatus_hints_format "{output}"
+      
+      mode_locked      "#[bg=white,fg=black,bold]  LOCKED "
+      mode_normal      "#[bg=blue,fg=black,bold]  NORMAL "
+      mode_resize      "#[bg=yellow,fg=black,bold]  RESIZE "
+      mode_pane        "#[bg=magenta,fg=black,bold]  PANE "
+      mode_move        "#[bg=red,fg=black,bold]  MOVE "
+      mode_tab         "#[bg=cyan,fg=black,bold]  TAB "
+      mode_scroll      "#[bg=green,fg=black,bold]  SCROLL "
+      mode_search      "#[bg=blue,fg=black,bold]  SEARCH "
+      mode_entersearch "#[bg=blue,fg=black,bold]  ENTER SEARCH "
+      mode_renametab   "#[bg=cyan,fg=black,bold]  RENAME TAB "
+      mode_renamepane  "#[bg=cyan,fg=black,bold]  RENAME PANE "
+      mode_session     "#[bg=green,fg=black,bold]  SESSION "
+      mode_tmux        "#[bg=white,fg=black,bold]  TMUX "
+      
+      tab_active              "#[bg=blue,fg=black,bold] {name} "
+      tab_active_fullscreen   "#[bg=blue,fg=black,bold] {fullscreen_indicator} {name} "
+      tab_active_sync         "#[bg=blue,fg=black,bold] {sync_indicator} {name} "
+      
+      tab_normal              "#[fg=white,bold] {name} "
+      tab_normal_fullscreen   "#[fg=white,bold] {fullscreen_indicator} {name} "
+      tab_normal_sync         "#[fg=white,bold] {sync_indicator} {name} "
+      tab_separator " "
+    }
+  }
+  pane
+}
