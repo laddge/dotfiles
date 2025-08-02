@@ -8,7 +8,7 @@ TERM = "xterm-256color"
 size = 10
 
 [font.normal]
-family = "Moralerspace Argon HWNF"
+family = "Moralerspace Argon HW"
 
 [mouse]
 hide_when_typing = true
