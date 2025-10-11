@@ -1,8 +1,12 @@
 [user]
+  signingkey = ~/.ssh/id_ed25519.pub
 	email = dev.laddge@gmail.com
 	name = Laddge
+[gpg]
+  format = ssh
 [commit]
 	template = ~/.commit_template
+  gpgsign = true
 [core]
 	editor = nvim
 [credential "https://github.com"]
