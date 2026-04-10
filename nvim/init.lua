@@ -30,6 +30,8 @@ vim.opt.softtabstop = 0
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.shiftround = true
+vim.opt.list = true
+vim.opt.listchars = { tab = '\\t', multispace = '| ', eol = '$' }
 
 -- backspaceKey
 vim.opt.backspace = 'indent,eol,start'

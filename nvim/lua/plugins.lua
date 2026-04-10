@@ -220,15 +220,15 @@ require('jetpack.packer').startup(function(use)
       require('nvim_comment').setup()
     end,
   }
-  use { 'lukas-reineke/indent-blankline.nvim',
-    as = 'ibl',
-    event = { 'VimEnter' },
-    config = function()
-      require('ibl').setup({
-        indent = { char = '|' },
-      })
-    end,
-  }
+  -- use { 'lukas-reineke/indent-blankline.nvim',
+  --   as = 'ibl',
+  --   event = { 'VimEnter' },
+  --   config = function()
+  --     require('ibl').setup({
+  --       indent = { char = '|' },
+  --     })
+  --   end,
+  -- }
   use { 'lukoshkin/trailing-whitespace', event = { 'VimEnter' } }
   use { 'kylechui/nvim-surround',
     event = { 'VimEnter' },
