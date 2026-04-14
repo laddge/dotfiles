@@ -1,13 +1,9 @@
-vim.cmd('packadd vim-jetpack')
-require('jetpack.packer').startup(function(use)
-  use { 'tani/vim-jetpack', opt = 1 }
-  use {
+return {
+  { 'neovim/nvim-lspconfig', event = { 'VimEnter' }, after = 'mason.nvim' },
+  { 'mason-org/mason-lspconfig.nvim', event = { 'VimEnter' }, after = 'mason.nvim' },
+  {
     'mason-org/mason.nvim',
     event = { 'VimEnter' },
-    requires = {
-      { 'neovim/nvim-lspconfig', event = { 'VimEnter' }, after = 'mason.nvim' },
-      { 'mason-org/mason-lspconfig.nvim', event = { 'VimEnter' }, after = 'mason.nvim' },
-    },
     config = function()
       require('mason').setup()
       require('mason-lspconfig').setup({
@@ -48,8 +44,8 @@ require('jetpack.packer').startup(function(use)
       vim.keymap.set('n', 'g]', vim.diagnostic.goto_next)
       vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev)
     end,
-  }
-  use {
+  },
+  {
     'hrsh7th/nvim-cmp',
     event = { 'InsertEnter' },
     requires = {
@@ -83,23 +79,16 @@ require('jetpack.packer').startup(function(use)
         },
       })
     end,
-  }
-  use { 'vim-skk/eskk.vim',
+  },
+  { 'vim-skk/eskk.vim',
     event = { 'VimEnter' },
     config = function()
-      vim.g['eskk#directory'] = '~/.eskk'
-      vim.g['eskk#dictionary'] = { path = '~/.eskk_jisyo', sorted = 1, encoding = 'utf-8' }
-      vim.g['eskk#large_dictionary'] = { path = '~/.config/nvim/SKK-JISYO.L.txt', sorted = 1, encoding = 'euc-jp' }
+      vim.g['eskk#directory'] = vim.fn.stdpath('data') .. '/eskk'
+      vim.g['eskk#dictionary'] = { path = vim.fn.stdpath('data') .. '/eskk/jisyo', sorted = 1, encoding = 'utf-8' }
+      vim.g['eskk#large_dictionary'] = { path = vim.fn.stdpath('config') .. '/SKK-JISYO.L.txt', sorted = 1, encoding = 'euc-jp' }
     end,
-  }
-  use { 'wuelnerdotexe/vim-astro',
-    ft = { 'astro' },
-    config = function()
-      vim.g.astro_typescript = 'enable'
-    end,
-  }
-  use { 'evanleck/vim-svelte', ft = { 'svelte' } }
-  use { 'nvim-lualine/lualine.nvim',
+  },
+  { 'nvim-lualine/lualine.nvim',
     event = { 'VimEnter' },
     config = function()
       local function skkmode()
@@ -125,41 +114,41 @@ require('jetpack.packer').startup(function(use)
         },
       })
     end,
-  }
-  use { 'nvim-tree/nvim-tree.lua',
+  },
+  { 'nvim-tree/nvim-web-devicons',
     event = { 'VimEnter' },
-    requires = {
-      { 'nvim-tree/nvim-web-devicons', event = { 'VimEnter' } },
-    },
-    config = function()
-      require('nvim-web-devicons').setup({
-        override = {
-          ts = {
-            icon = '',
-            color = "#519aba",
-            cterm_color = "74",
-            name = "Ts",
-          },
-          cjs = {
-            icon = '󰌞',
-            color = "#f1e05a",
-            cterm_color = "185",
-            name = "Cjs",
-          },
-          js = {
-            icon = '󰌞',
-            color = "#f1e05a",
-            cterm_color = "185",
-            name = "Js",
-          },
-          mjs = {
-            icon = '󰌞',
-            color = "#f1e05a",
-            cterm_color = "185",
-            name = "Mjs",
-          },
+    opt = {
+      override = {
+        ts = {
+          icon = '',
+          color = "#519aba",
+          cterm_color = "74",
+          name = "Ts",
         },
-      })
+        cjs = {
+          icon = '󰌞',
+          color = "#f1e05a",
+          cterm_color = "185",
+          name = "Cjs",
+        },
+        js = {
+          icon = '󰌞',
+          color = "#f1e05a",
+          cterm_color = "185",
+          name = "Js",
+        },
+        mjs = {
+          icon = '󰌞',
+          color = "#f1e05a",
+          cterm_color = "185",
+          name = "Mjs",
+        },
+      },
+    }
+  },
+  { 'nvim-tree/nvim-tree.lua',
+    event = { 'VimEnter' },
+    config = function()
       require('nvim-tree').setup({
         disable_netrw = true,
         hijack_cursor = true,
@@ -172,8 +161,8 @@ require('jetpack.packer').startup(function(use)
       })
       vim.keymap.set('n', '<Leader>e', require('nvim-tree.api').tree.toggle)
     end,
-  }
-  use { 'akinsho/bufferline.nvim',
+  },
+  { 'akinsho/bufferline.nvim',
     event = { 'VimEnter' },
     requires = {
       { 'nvim-tree/nvim-web-devicons', event = { 'VimEnter' } },
@@ -184,8 +173,8 @@ require('jetpack.packer').startup(function(use)
       vim.keymap.set('n', '<Leader>h', '<cmd>bp<CR>')
       vim.keymap.set('n', '<Leader>l', '<cmd>bn<CR>')
     end,
-  }
-  use { 'nvim-telescope/telescope.nvim',
+  },
+  { 'nvim-telescope/telescope.nvim',
     event = { 'VimEnter' },
     requires = {
       { 'nvim-lua/plenary.nvim', event = { 'VimEnter' } },
@@ -198,60 +187,54 @@ require('jetpack.packer').startup(function(use)
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     end,
-  }
-  use { 'akinsho/toggleterm.nvim',
+  },
+  { 'akinsho/toggleterm.nvim',
     event = { 'VimEnter' },
     config = function()
       require('toggleterm').setup({
         open_mapping = [[<c-\>]],
       })
     end,
-  }
-  use { 'lewis6991/gitsigns.nvim',
+  },
+  { 'lewis6991/gitsigns.nvim',
     event = { 'VimEnter' },
     config = function()
       vim.opt.signcolumn = 'yes'
       require('gitsigns').setup()
     end,
-  }
-  use { 'terrortylor/nvim-comment',
+  },
+  { 'terrortylor/nvim-comment',
     event = { 'VimEnter' },
     config = function()
       require('nvim_comment').setup()
     end,
-  }
-  -- use { 'lukas-reineke/indent-blankline.nvim',
-  --   as = 'ibl',
-  --   event = { 'VimEnter' },
-  --   config = function()
-  --     require('ibl').setup({
-  --       indent = { char = '|' },
-  --     })
-  --   end,
-  -- }
-  use { 'lukoshkin/trailing-whitespace', event = { 'VimEnter' } }
-  use { 'kylechui/nvim-surround',
+  },
+  { 'lukoshkin/trailing-whitespace', event = { 'VimEnter' } },
+  { 'kylechui/nvim-surround',
     event = { 'VimEnter' },
     config = function()
       require('nvim-surround').setup()
     end,
-  }
-  use { 'nvim-treesitter/nvim-treesitter',
+  },
+  { 'nvim-treesitter/nvim-treesitter',
     event = { 'VimEnter' },
     run = ':TSUpdate',
     config = function()
-      require'nvim-treesitter.configs'.setup({
-        highlight = { enable = true },
+      require("nvim-treesitter").setup({})
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
       })
     end,
-  }
-  use { 'EdenEast/nightfox.nvim',
-    event = { 'VimEnter' },
+  },
+  { 'EdenEast/nightfox.nvim',
     config = function()
       vim.cmd('colorscheme nightfox')
     end,
-  }
-  use { 'wakatime/vim-wakatime',
+  },
+  { 'wakatime/vim-wakatime',
     event = { 'VimEnter' },
-  }
-end)
+  },
+}

@@ -54,6 +54,5 @@ vim.opt.undofile = true
 -- hide shortmess
 vim.opt.shortmess = vim.o.shortmess .. 'I'
 
-require('cellwidths')
-require('plugins')
-require('ekken')
+require('config.cellwidths')
+require('config.lazy')
