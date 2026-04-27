@@ -56,3 +56,5 @@ vim.opt.shortmess = vim.o.shortmess .. 'I'
 
 require('config.cellwidths')
 require('config.lazy')
+
+vim.api.nvim_create_autocmd("VimEnter",{callback=function()require"lazy".update({show = false})end})

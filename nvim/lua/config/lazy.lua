@@ -27,9 +27,12 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
+  lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json",
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   -- install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- checker = { enabled = true },
 })
+
+vim.api.nvim_create_autocmd("VimEnter",{callback=function()require"lazy".update({show = false})end})
